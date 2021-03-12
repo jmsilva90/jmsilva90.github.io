@@ -23,7 +23,6 @@ $(function () {
             $.ajax({
                 url: "https://www.elformo.com/forms/0df5e74f-aa74-4688-8eb0-7658f74952d6",
                 type: "POST",
-                async: false,
                 data: {
                     name: name,
                     phone: phone,
@@ -31,7 +30,7 @@ $(function () {
                     message: message,
                 },
                 cache: false,
-                success: function () {
+                /*success: function () {
                     // Success message
                     $("#success").html("<div class='alert alert-success'>");
                     $("#success > .alert-success")
@@ -45,7 +44,7 @@ $(function () {
                     $("#success > .alert-success").append("</div>");
                     //clear all fields
                     $("#contactForm").trigger("reset");
-                },
+                },*/
                 /*error: function () {
                     // Fail message
                     $("#success").html("<div class='alert alert-danger'>");
@@ -66,6 +65,19 @@ $(function () {
                     $("#contactForm").trigger("reset");
                 },*/
                 complete: function () {
+                    // Success message
+                    $("#success").html("<div class='alert alert-success'>");
+                    $("#success > .alert-success")
+                        .html(
+                            "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                        )
+                        .append("</button>");
+                    $("#success > .alert-success").append(
+                        "<strong>A sua mensagem foi enviada. </strong>"
+                    );
+                    $("#success > .alert-success").append("</div>");
+                    //clear all fields
+                    $("#contactForm").trigger("reset");
                     setTimeout(function () {
                         $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
                     }, 1000);
