@@ -23,6 +23,7 @@ $(function () {
             $.ajax({
                 url: "https://www.elformo.com/forms/0df5e74f-aa74-4688-8eb0-7658f74952d6",
                 type: "POST",
+                async: false,
                 data: {
                     name: name,
                     phone: phone,
