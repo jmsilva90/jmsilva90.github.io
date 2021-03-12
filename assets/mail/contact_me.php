@@ -17,6 +17,9 @@ $body = "You have received a new message from your website contact form.\n\n"."H
 $header = "From: noreply@jmsilva90.github.io\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $header .= "Reply-To: $email";	
 
+ini_set("SMTP", "aspmx.l.google.com");
+ini_set("sendmail_from", "suricatept@gmail.com");
+
 if(!mail($to, $subject, $body, $header))
   http_response_code(500);
 ?>
