@@ -45,7 +45,7 @@ $(function () {
                     //clear all fields
                     $("#contactForm").trigger("reset");
                 },
-                error: function () {
+                /*error: function () {
                     // Fail message
                     $("#success").html("<div class='alert alert-danger'>");
                     $("#success > .alert-danger")
@@ -63,7 +63,7 @@ $(function () {
                     $("#success > .alert-danger").append("</div>");
                     //clear all fields
                     $("#contactForm").trigger("reset");
-                },
+                },*/
                 complete: function () {
                     setTimeout(function () {
                         $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
